@@ -9,6 +9,9 @@ import com.appwsc.zara.api.service.ITestPriceService;
 import com.appwsc.zara.model.mapper.IPriceMapper;
 import com.appwsc.zara.model.repository.IPriceRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class TestPriceServiceImpl implements ITestPriceService{
 
@@ -19,8 +22,13 @@ public class TestPriceServiceImpl implements ITestPriceService{
 	private IPriceMapper mapper; 
 	@Override
 	public PriceDTO testPrice(TestRequest request) {
-		// TODO Auto-generated method stub
-		return null;
+		PriceDTO result = new PriceDTO();
+		try {
+			result= mapper.entityToDTO(repository.testPrice(request.getStartDate(),
+					request.getProducId(), request.getBrandId()));
+		} catch (Exception e) {
+			log.error("{}", e);
+		}
+		return result;
 	}
-
 }
