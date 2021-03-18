@@ -24,8 +24,8 @@ public class TestPriceServiceImpl implements ITestPriceService{
 	public PriceDTO testPrice(TestRequest request) {
 		PriceDTO result = new PriceDTO();
 		try {
-//			result= mapper.entityToDTO(repository.testPrice(request.getStartDate(),
-//					request.getProducId(), request.getBrandId()));
+			result= mapper.entityToDTO(repository.testPrice(request.getStartDate(),
+					request.getProducId(), request.getBrandId()));
 		} catch (Exception e) {
 			log.error("{}", e);
 		}
