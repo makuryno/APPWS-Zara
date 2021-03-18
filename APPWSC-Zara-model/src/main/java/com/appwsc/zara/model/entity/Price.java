@@ -12,9 +12,8 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="PRICES")
-public class Prices {
+public class Price {
 	
-	@Id
 	@Column(name="BRAND_ID")
 	private Integer branId;
 
@@ -24,6 +23,7 @@ public class Prices {
 	@Column(name="END_DATE")
 	private Timestamp endDate;
 	
+	@Id
 	@Column(name="PRICE_LIST")
 	private Integer priceList;
 	

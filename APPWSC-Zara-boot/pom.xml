@@ -5,6 +5,22 @@
     <artifactId>APPWSC-Zara</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>APPWSC-Zara-boot</artifactId>
+  <artifactId>APPWSC-Zara-boot</artifactId>  
   
+     <dependencies>
+
+        <dependency>
+            <groupId>com.ecommerce.zara.com</groupId>
+            <artifactId>APPWSC-Zara-ws</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ecommerce.zara.com</groupId>
+            <artifactId>APPWSC-Zara-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
 </project>
