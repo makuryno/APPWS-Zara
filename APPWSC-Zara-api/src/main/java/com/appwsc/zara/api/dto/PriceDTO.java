@@ -1,8 +1,17 @@
 package com.appwsc.zara.api.dto;
 
 import java.sql.Timestamp;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class PriceDTO {
 
 	@JsonProperty("BRAND_ID")

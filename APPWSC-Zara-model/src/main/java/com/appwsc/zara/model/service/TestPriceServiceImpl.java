@@ -1,5 +1,9 @@
 package com.appwsc.zara.model.service;
 
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,14 +24,16 @@ public class TestPriceServiceImpl implements ITestPriceService{
 	
 	@Autowired
 	private IPriceMapper mapper; 
+	
 	@Override
-	public PriceDTO testPrice(TestRequest request) {
-		PriceDTO result = new PriceDTO();
+	public List<PriceDTO> testPrice(TestRequest request) {
+		List<PriceDTO> result = new ArrayList<PriceDTO>();
 		try {
-			result= mapper.entityToDTO(repository.testPrice(request.getStartDate(),
+			Timestamp startDate =  new Timestamp(request.getStartDate().getTime());
+			result= mapper.entitysToDTOs(repository.testPrice(startDate,
 					request.getProducId(), request.getBrandId()));
 		} catch (Exception e) {
-			log.error("{}", e);
+			log.error("Failed {}", e);
 		}
 		return result;
 	}

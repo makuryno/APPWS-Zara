@@ -1,11 +1,13 @@
 package com.appwsc.zara.model.mapper;
 
+import java.util.List;
+
 import org.mapstruct.Mapper;
 import com.appwsc.zara.api.dto.PriceDTO;
 import com.appwsc.zara.model.entity.Price;
 
-@Mapper(componentModel = "spring")
+@Mapper
 public interface IPriceMapper {
 	
-	PriceDTO entityToDTO(Price entity);
+	List<PriceDTO> entitysToDTOs(List<Price> entity);
 }

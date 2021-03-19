@@ -1,6 +1,6 @@
 package com.appwsc.zara.api.request;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class TestRequest {
 
 	@JsonProperty("START_DATE")
-	private Timestamp startDate;
+	private Date startDate;
 	
 	@JsonProperty("PRODUCT_ID")
 	private Long producId;
